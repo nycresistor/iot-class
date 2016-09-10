@@ -10,6 +10,24 @@ char* url = "/est/now?hour:%25H%25nminute:%25M";
 int hour;
 int minute;
 
+String timeString(int hours, int minutes) {
+  String hourStr;
+  String minStr;
+
+  if (hours < 10) {
+    hourStr = String("0") + hours;
+  } else {
+    hourStr = String(hours);
+  }
+  if (minutes < 10) {
+    minStr = String("0") + minutes;
+  } else {
+    minStr = String(minutes);
+  }
+
+  return String("The time is: ") + hourStr + ":" + minStr;
+}
+
 void getTime() {
   // Use WiFiClient class to create TCP connections
   WiFiClient client;
@@ -39,8 +57,7 @@ void getTime() {
     if (i < 0) continue;
     minute = (line.substring(i+7)).toInt();
 
-    Serial.println(String("The time is: ") + hour + ":" + minute);
-
+    Serial.println(timeString(hour, minute));
   }
 }
 
