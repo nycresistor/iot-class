@@ -5,8 +5,12 @@ const char* ssid     = "NYCR24";
 const char* password = "clubmate";
 
 char* host = "www.timeapi.org";
+char* url = "/est/now?hour:%25H%25nminute:%25M";
 
-void httpGet(String url, char* host) {
+int hour;
+int minute;
+
+void getTime() {
   // Use WiFiClient class to create TCP connections
   WiFiClient client;
   const int httpPort = 80;
@@ -26,7 +30,17 @@ void httpGet(String url, char* host) {
   // Read all the lines of the reply from server and print them to Serial
   while(client.available()){
     String line = client.readStringUntil('\r');
-    Serial.print(line);
+
+    int i = line.indexOf("hour:");
+    if (i < 0) continue;
+    hour = (line.substring(i+5)).toInt() + 1;
+
+    i = line.indexOf("minute:");
+    if (i < 0) continue;
+    minute = (line.substring(i+7)).toInt();
+
+    Serial.println(String("The time is: ") + hour + ":" + minute);
+
   }
 }
 
@@ -34,9 +48,6 @@ void setup() {
   Serial.begin(115200);
   delay(100);
 
-  // We start by connecting to a WiFi network
-
-  Serial.println();
   Serial.println();
   Serial.print("Connecting to ");
   Serial.println(ssid);
@@ -49,7 +60,7 @@ void setup() {
   }
 
   Serial.println("");
-  Serial.println("WiFi connected");  
+  Serial.println("WiFi connected!");  
   Serial.println("IP address: ");
   Serial.println(WiFi.localIP());
 }
@@ -57,6 +68,5 @@ void setup() {
 
 void loop() {
   delay(5000);
-
-  httpGet("/est/now?%25H:%25M", host);
+  getTime();
 }
