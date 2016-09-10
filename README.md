@@ -11,6 +11,7 @@ For this class today, you'll need to install:
 - [Adafruit_NeoPixel](https://github.com/adafruit/Adafruit_NeoPixel/archive/master.zip): for using the OLED display
 - [Adafruit_SSD1306](https://github.com/adafruit/Adafruit_SSD1306/archive/master.zip): for using the OLED display
 - [Adafruit_GFX](https://github.com/adafruit/Adafruit-GFX-Library/archive/master.zip)
+
 # Instructions
 
 ## Blink
