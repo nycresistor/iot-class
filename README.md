@@ -59,6 +59,8 @@ Let's dig into programming with Neopixels a bit.
 
 - Implement a gradient effect, so that the display starts out blue and fades to white.
 
+Check out the solution in PixelFade if you get stuck.
+
 ## SunriseClock
 
 Now for the grand finale. We're going to make a sunrise alarm "lamp". The idea is:
@@ -66,6 +68,8 @@ Now for the grand finale. We're going to make a sunrise alarm "lamp". The idea i
 - Set the wake-up time in your Arduino code
 - Poll the time API to check if it's the right time
 - If so, gradually turn on the lamp
+
+
 
 # Future work
 
