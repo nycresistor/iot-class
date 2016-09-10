@@ -8,6 +8,7 @@ For this class today, you'll need to install:
 
 ## Install the Arduino libraries
 
+- [Adafruit_NeoPixel](https://github.com/adafruit/Adafruit_NeoPixel/archive/master.zip): for using the OLED display
 - [Adafruit_SSD1306](https://github.com/adafruit/Adafruit_SSD1306/archive/master.zip): for using the OLED display
 - [Adafruit_GFX](https://github.com/adafruit/Adafruit-GFX-Library/archive/master.zip)
 # Instructions
@@ -45,3 +46,33 @@ Run  without modifications, using your Feather HUZZAH as well as the OLED Feathe
 What if we want to display the time on the screen? We have to combine TimeApi and DisplayTest!
 
 Feel free to copy the solution in DisplayTime_Solution, but you can also do this part by modifying DisplayTest.
+
+## PixelTest
+
+Run without modifications, using your Feather HUZZAH as well as the Neopixel FeatherWing. It should blink some pixels!
+
+Let's dig into programming with Neopixels a bit.
+
+**Your turn!** Try to do the following:
+
+- Implement a fade effect, so that the display gradually becomes brighter, and then dims back down.
+
+- Implement a gradient effect, so that the display starts out blue and fades to white.
+
+## SunriseClock
+
+Now for the grand finale. We're going to make a sunrise alarm "lamp". The idea is:
+
+- Set the wake-up time in your Arduino code
+- Poll the time API to check if it's the right time
+- If so, gradually turn on the lamp
+
+# Future work
+
+This is just the beginning of what you can do with your kit! Here's a couple of ideas:
+
+- Add a buzzer or other sound-making device, so that your alarm "lamp" can also be a normal alarm clock & beep when it's time to _really_ wake up
+
+- Have the Feather act like a web server, so that you can send a POST request to change the alarm time
+
+- Find an awesome diffuser to put your "lamp" inside of, so it looks like an actual lamp
