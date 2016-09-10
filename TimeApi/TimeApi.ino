@@ -58,5 +58,5 @@ void setup() {
 void loop() {
   delay(5000);
 
-  httpGet("/est/now", host);
+  httpGet("/est/now?%25H:%25M", host);
 }
