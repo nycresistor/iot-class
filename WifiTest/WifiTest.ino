@@ -4,10 +4,10 @@
 
 #include <ESP8266WiFi.h>
 
-const char* ssid     = "NYCR24";
-const char* password = "clubmate";
+const char* ssid     = "yourssid";
+const char* password = "yourpassword";
 
-const char* host = "www.timeapi.org";
+const char* host = "wifitest.adafruit.com";
 
 void setup() {
   Serial.begin(115200);
@@ -50,13 +50,16 @@ void loop() {
     return;
   }
   
+  // We now create a URI for the request
+  String url = "/testwifi/index.html";
+  Serial.print("Requesting URL: ");
+  Serial.println(url);
+  
   // This will send the request to the server
-  client.println(String("GET ") + "/est/now" + " HTTP/1.1");
-  client.print("Host: ");
-  client.println("www.timeapi.org");
-  client.println("User-Agent: curl/7.43.0");
-  client.println();
-  delay(800);
+  client.print(String("GET ") + url + " HTTP/1.1\r\n" +
+               "Host: " + host + "\r\n" + 
+               "Connection: close\r\n\r\n");
+  delay(500);
   
   // Read all the lines of the reply from server and print them to Serial
   while(client.available()){
