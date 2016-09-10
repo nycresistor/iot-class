@@ -69,7 +69,7 @@ Now for the grand finale. We're going to make a sunrise alarm "lamp". The idea i
 - Poll the time API to check if it's the right time
 - If so, gradually turn on the lamp
 
-
+You should be able to build this on your own using the code from `PixelFade` and from `TimeApi`. If you get stuck, check the solution in SunriseClock!
 
 # Future work
 
@@ -80,3 +80,6 @@ This is just the beginning of what you can do with your kit! Here's a couple of 
 - Have the Feather act like a web server, so that you can send a POST request to change the alarm time
 
 - Find an awesome diffuser to put your "lamp" inside of, so it looks like an actual lamp
+
+- Add a motion sensor, so that you can turn on the lights when someone walks into the room
+
