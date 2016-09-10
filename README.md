@@ -40,3 +40,8 @@ Run  without modifications, using your Feather HUZZAH as well as the OLED Feathe
 
 **Super bonus points:** Can you make the text scroll across the screen? You'll need to know how to program with *loops* to make this happen...
 
+## DisplayTime
+
+What if we want to display the time on the screen? We have to combine TimeApi and DisplayTest!
+
+Feel free to copy the solution in DisplayTime_Solution, but you can also do this part by modifying DisplayTest.
