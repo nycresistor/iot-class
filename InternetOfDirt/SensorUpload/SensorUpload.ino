@@ -13,7 +13,9 @@
 #define AIO_USERNAME    "bme14"
 #define AIO_KEY         "47427099c49ee7a809475caa3fc04386d1dd0e4b"
 
-int inputPin = A0; // define analog  pin
+int inputPin = A0;
+
+// CHANGE THESE BASED ON YOUR SENSOR READINGS
 const int dryVal = 567;
 const int wetVal = 367;
 
@@ -21,10 +23,7 @@ const int wetVal = 367;
 void connect();
 int readHumidity();
 
-// Create an ESP8266 WiFiClient class to connect to the MQTT server.
 WiFiClient client;
-
-// Setup the MQTT client class by passing in the WiFi client and MQTT server and login details.
 Adafruit_MQTT_Client mqtt(&client, AIO_SERVER, AIO_SERVERPORT, AIO_USERNAME, AIO_KEY);
 
 /****************************** Feeds ***************************************/
