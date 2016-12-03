@@ -34,6 +34,6 @@ void fade(int interval) {
 }
 
 void loop() {
-  fade(5000);
+  fade(100);
 }
 

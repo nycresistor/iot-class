@@ -1,7 +1,3 @@
-/*
- *  Simple HTTP get webclient test
- */
-
 #include <ESP8266WiFi.h>
 
 const char* ssid     = "NYCR24";
@@ -14,14 +10,10 @@ void setup() {
   delay(100);
 
   // We start by connecting to a WiFi network
-
-  Serial.println();
-  Serial.println();
   Serial.print("Connecting to ");
   Serial.println(ssid);
-  
+
   WiFi.begin(ssid, password);
-  
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");

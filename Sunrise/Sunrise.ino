@@ -70,8 +70,6 @@ void getTime() {
     i = line.indexOf("minute:");
     if (i < 0) continue;
     minute = (line.substring(i+7)).toInt();
-
-    Serial.println(timeString(hour, minute));
   }
 }
 
