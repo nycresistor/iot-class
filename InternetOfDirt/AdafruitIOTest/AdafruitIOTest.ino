@@ -57,12 +57,8 @@ void loop() {
       connect();
   }
 
-
-  // Grab the current state of the sensor
-  int humidity_data = 42;
-
-  // Publish data
-  if (!humidity.publish(humidity_data)) {
+  // Publish fake data
+  if (!humidity.publish(42)) {
     Serial.println(F("Failed to publish temperature"));
   } else {
     Serial.println(F("Temperature published!"));

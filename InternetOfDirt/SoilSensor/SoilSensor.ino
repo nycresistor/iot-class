@@ -1,4 +1,4 @@
-int inputPin = A0; // define analog  pin
+int inputPin = A0;
 
 /* The default dry and wet values for the sensor are 520 and 260 (no voltage divider). 
  *  To calibrate your sensor, run this code and open the Serial Monitor.
@@ -16,14 +16,14 @@ void setup() {
 void loop() {
   sensorVal = analogRead(inputPin);
   
-  Serial.print("Sensor Value: "); // print sensor reading
+  Serial.print("Sensor Value: ");
   Serial.println(sensorVal);
   
-  Serial.print("RH: "); // print relative humidity
-  Serial.print(100*(dryVal-sensorVal)/(dryVal-wetVal)); // calculate RH assuming linear relationship between sensor readings and soil moisture level.
+  Serial.print("Relative humidity: ");
+  // calculate RH assuming linear relationship between sensor readings and soil moisture level.
+  Serial.print(100* (dryVal - sensorVal) / (dryVal - wetVal));
   Serial.println("%");  
   Serial.println();
   
   delay(1000);
-
 }
